@@ -15,7 +15,7 @@
 
     <h2>요약</h2>
     <ul>
-      <li>Google 권한은 앱이 만든 캘린더를 다루는 <code>calendar.app.created</code> 하나만 요청합니다.</li>
+      <li>Google 권한은 모든 캘린더 읽기와 소유한 캘린더 쓰기를 포함합니다. 지금 시험 앱은 이 권한으로 연결을 확인하고 시험용 캘린더를 만들고 지우는 일만 합니다.</li>
       <li>정보를 판매하거나 광고에 쓰지 않고, 아래에 적은 외부 서비스 외의 제3자에게 넘기지 않습니다.</li>
       <li>Google 연결은 언제든 해제할 수 있고, 해제하면 서버의 Google 토큰을 지웁니다.</li>
     </ul>
@@ -36,8 +36,15 @@
 
     <h2>Google 사용자 데이터</h2>
     <ul>
-      <li><strong>접근 범위:</strong> Google은 이 권한을 보조 캘린더를 만들고 그 캘린더의 일정을 보고, 만들고, 바꾸고, 지우는 권한으로 설명합니다. 이 권한으로 기본 캘린더의 일정을 읽을 수 없음은 시험으로 확인했습니다.</li>
-      <li><strong>사용:</strong> 지금은 연결 상태를 확인하고, 시험용 캘린더와 시험 일정을 만들고 지우는 데만 씁니다.</li>
+      <li><strong>요청하는 권한:</strong>
+        <ul>
+          <li><code>calendar.calendarlist.readonly</code>: 구독 중인 캘린더 목록 보기</li>
+          <li><code>calendar.events.readonly</code>: 모든 캘린더의 일정 보기</li>
+          <li><code>calendar.events.owned</code>: 소유한 캘린더의 일정 보기, 만들기, 바꾸기, 지우기</li>
+          <li><code>calendar.app.created</code>: 보조 캘린더를 만들고 그 캘린더의 일정 다루기</li>
+        </ul>
+      </li>
+      <li><strong>사용:</strong> 서버에 보관한 토큰으로 위 작업을 할 수 있지만, 지금은 연결 상태를 확인하고 시험용 캘린더와 시험 일정을 만들고 지우는 데만 씁니다. 기존 캘린더의 일정을 읽거나 바꾸는 기능은 아직 앱에 없습니다. 실제로 쓸 권한으로 연결이 유지되는지 시험하기 위해 권한을 먼저 받았습니다.</li>
       <li><strong>저장:</strong> 위에 적은 연결 정보만 저장합니다. 캘린더와 일정의 내용은 서버에 저장하지 않습니다.</li>
       <li><strong>공유:</strong> 토큰 보관에 쓰는 Supabase 외의 제3자에게 넘기지 않습니다. 광고나 AI 모델 학습에 쓰지 않으며, AI 제공업체에 보내지 않습니다.</li>
     </ul>

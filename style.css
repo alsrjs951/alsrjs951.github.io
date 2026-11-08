@@ -2,7 +2,18 @@
   color-scheme: light dark;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
   line-height: 1.7;
+  color: #1B1B18;
+  background: #F6F6F3;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root { color: #F1F1EC; background: #131312; }
+}
+
+.brand-heading, .brand-header { margin: 0 0 24px; }
+.brand-logo { display: block; max-width: 100%; height: auto; }
+.brand-header a { display: inline-block; border-radius: 8px; }
+.brand-header a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 
 body {
   margin: 0 auto;
